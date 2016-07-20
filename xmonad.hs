@@ -2,4 +2,4 @@ import XMonad
 
 main = do
   xmonad $ defaultConfig
-    { terminal = "urxvt" }
+    { terminal = "gnome-terminal" }
