@@ -8,12 +8,19 @@ hybrid_sleep() {
 	systemctl hybrid-sleep
 }
 
+sleep_suspend() {
+	systemctl suspend
+}
+
 case "$1" in
 	"lock")
 		lock
 		;;
 	"lock-hybrid-sleep")
 		lock && hybrid_sleep
+		;;
+	"lock-suspend")
+		lock && sleep_suspend
 		;;
 	"mute")
 		pactl set-sink-mute @DEFAULT_SINK@ toggle
