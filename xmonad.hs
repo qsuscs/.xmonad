@@ -8,4 +8,5 @@ main = do
     }
     `additionalKeysP`
     [ ("M-s", spawn "i3lock -c 220022")
+    , ("M-S-s", spawn "i3lock -c 220022 && systemctl hybrid-sleep")
     ]
