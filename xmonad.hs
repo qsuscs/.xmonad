@@ -13,4 +13,8 @@ main = do
     , ("M-S-s", helper "lock-hybrid-sleep")
     , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
+    , ("<XF86AudioMute>", helper "mute")
+    , ("<XF86AudioRaiseVolume>", helper "volup")
+    , ("<XF86AudioLowerVolume>", helper "voldown")
+    , ("<XF86AudioMicMute>", helper "micmute")
     ]
