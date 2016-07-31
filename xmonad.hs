@@ -1,10 +1,10 @@
 import           XMonad
 import           XMonad.Util.EZConfig
+import           XMonad.Hooks.DynamicLog
 
 helper x = spawn $ "~/.xmonad/helper.sh " ++ x
 
-main = do
-  xmonad $ defaultConfig
+main = xmonad =<< xmobar (defaultConfig
     { terminal = "gnome-terminal"
     , modMask = mod4Mask
     }
@@ -18,4 +18,4 @@ main = do
     , ("<XF86AudioRaiseVolume>", helper "volup")
     , ("<XF86AudioLowerVolume>", helper "voldown")
     , ("<XF86AudioMicMute>", helper "micmute")
-    ]
+    ])
