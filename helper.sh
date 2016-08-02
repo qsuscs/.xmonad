@@ -1,7 +1,7 @@
 #!/bin/sh
 
 lock() {
-	i3lock -c aa00aa
+	i3lock -i ~/.xmonad/lockscreen.png -c 550055
 }
 
 hybrid_sleep() {
