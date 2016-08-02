@@ -22,10 +22,11 @@ Config { font = "xft:DejaVuSansMono:size=8"
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run BatteryP ["BAT0"] [] 10
                     , Run StdinReader
+                    , Run Volume "default" "Master" ["-t", "Vol: <volume>%"] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%cpu% | %memory% * %swap% | %network% | %StdinReader% }\
-                    \{ %battery% | %date% | %hostname%"
+                    \{ %default:Master% | %battery% | %date% | %hostname%"
        }
 -- vim:ft=haskell et

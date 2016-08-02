@@ -20,10 +20,11 @@ Config { font = "xft:DejaVuSansMono:size=8"
                     , Run Swap [] 10
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run StdinReader
+                    , Run Volume "default" "Master" [] 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
        , template = "%cpu% | %memory% * %swap% | %StdinReader% }\
-                    \{ %date% | %hostname%"
+                    \{ %default:Master% | %date% | %hostname%"
        }
 -- vim:ft=haskell et
