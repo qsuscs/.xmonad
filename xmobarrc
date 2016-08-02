@@ -21,10 +21,11 @@ Config { font = "xft:DejaVuSansMono:size=8"
                     , Run Com "/home/qsx/.xmonad/network.sh" [] "network" 10
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run BatteryP ["BAT0"] [] 10
+                    , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%cpu% | %memory% * %swap% | %network% }\
+       , template = "%cpu% | %memory% * %swap% | %network% | %StdinReader% }\
                     \{ %battery% | %date% | %hostname%"
        }
 -- vim:ft=haskell et
