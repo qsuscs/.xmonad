@@ -3,6 +3,7 @@ import           XMonad.Util.EZConfig
 import           XMonad.Hooks.DynamicLog
 
 helper x = spawn $ "~/.xmonad/helper.sh " ++ x
+kbd k = spawn $ "setxkbmap " ++ k
 
 main = xmonad =<< xmobar (defaultConfig
     { terminal = "gnome-terminal"
@@ -18,4 +19,7 @@ main = xmonad =<< xmobar (defaultConfig
     , ("<XF86AudioRaiseVolume>", helper "volup")
     , ("<XF86AudioLowerVolume>", helper "voldown")
     , ("<XF86AudioMicMute>", helper "micmute")
+    , ("M-<F1>", kbd "de bone")
+    , ("M-<F2>", kbd "de ru")
+    , ("M-<F3>", kbd "gr")
     ])
