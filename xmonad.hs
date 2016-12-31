@@ -20,6 +20,7 @@ main = xmonad =<< xmobar (defaultConfig
     , ("<XF86AudioLowerVolume>", helper "voldown")
     , ("<XF86AudioMicMute>", helper "micmute")
     , ("M-<F1>", kbd "de bone")
+    , ("M-S-<F1>", kbd "de neo_qwertz")
     , ("M-<F2>", kbd "de ru")
     , ("M-<F3>", kbd "gr")
     ])
