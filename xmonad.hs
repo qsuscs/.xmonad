@@ -11,6 +11,7 @@ main = xmonad =<< xmobar (defaultConfig
     }
     `additionalKeysP`
     [ ("M-s", helper "lock")
+    , ("M-<Esc>", helper "lock")
     , ("M-S-s", helper "lock-hybrid-sleep")
     , ("<XF86Sleep>", helper "lock-suspend")
     , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
