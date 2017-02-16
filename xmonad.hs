@@ -1,12 +1,22 @@
 import           XMonad
-import           XMonad.Util.EZConfig
 import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.EwmhDesktops        (ewmh)
+import           XMonad.Hooks.ManageDocks
+import           XMonad.Util.EZConfig
+import           XMonad.Util.Run
+
+import           System.Taffybar.Hooks.PagerHints (pagerHints)
 
 helper x = spawn $ "~/.xmonad/helper.sh " ++ x
 kbd k = spawn $ "setxkbmap " ++ k
 
-main = xmonad =<< xmobar (defaultConfig
+main = do
+  h <- spawnPipe "xmobar"
+  xmonad $ docks $ ewmh $ pagerHints $ (def
     { terminal = "gnome-terminal"
+    , manageHook = manageDocks <+> manageHook def
+    , layoutHook = avoidStruts  $  layoutHook def
+    , logHook = dynamicLogWithPP $ xmobarPP { ppOutput = hPutStrLn h }
     , modMask = mod4Mask
     }
     `additionalKeysP`
@@ -24,4 +34,5 @@ main = xmonad =<< xmobar (defaultConfig
     , ("M-S-<F1>", kbd "de")
     , ("M-<F2>", kbd "de ru")
     , ("M-<F3>", kbd "gr")
+    , ("M-b", sendMessage ToggleStruts)
     ])

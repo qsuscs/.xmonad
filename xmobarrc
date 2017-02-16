@@ -5,7 +5,7 @@ Config { font = "xft:DejaVuSansMono:size=8"
        , bgColor = "black"
        , fgColor = "grey"
        , alpha = 255
-       , position = Top
+       , position = Bottom
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
