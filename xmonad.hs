@@ -18,6 +18,7 @@ main = do
     , layoutHook = avoidStruts  $  layoutHook def
     , logHook = dynamicLogWithPP $ xmobarPP { ppOutput = hPutStrLn h }
     , modMask = mod4Mask
+    , borderWidth = 0
     }
     `additionalKeysP`
     [ ("M-s", helper "lock")
