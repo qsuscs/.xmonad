@@ -18,7 +18,6 @@ Config { font = "xft:DejaVuSansMono:size=8"
        , commands = [ Run Cpu ["-p", "3", "-t", "CPU: <total>%"] 10
                     , Run Memory ["-t", "Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Com "/home/qsx/.xmonad/network.sh" [] "network" 10
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run BatteryP ["BAT0"] [] 10
                     , Run StdinReader
@@ -27,7 +26,7 @@ Config { font = "xft:DejaVuSansMono:size=8"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%cpu% | %memory% * %swap% | %network% | %StdinReader% }\
+       , template = "%cpu% | %memory% * %swap% | %StdinReader% }\
                     \{ %default:Master% | %battery% | %date% | %kbd% | %hostname%"
        }
 -- vim:ft=haskell et
