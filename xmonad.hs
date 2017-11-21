@@ -10,11 +10,17 @@ import           System.Taffybar.Hooks.PagerHints (pagerHints)
 helper x = spawn $ "~/.xmonad/helper.sh " ++ x
 kbd k = spawn $ "setxkbmap " ++ k
 
+myManageHook = composeAll
+  [ className =? "Mumble" --> doFloat
+  , className =? "Pinentry" --> doFloat
+  , manageDocks
+  ]
+
 main = do
   h <- spawnPipe "xmobar"
   xmonad $ docks $ ewmh $ pagerHints $ (def
     { terminal = "gnome-terminal"
-    , manageHook = manageDocks <+> manageHook def
+    , manageHook = myManageHook <+> manageHook def
     , layoutHook = avoidStruts  $  layoutHook def
     , logHook = dynamicLogWithPP $ xmobarPP { ppOutput = hPutStrLn h }
     , modMask = mod4Mask
