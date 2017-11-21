@@ -10,4 +10,5 @@ xscreensaver -no-splash &
 taffybar &
 nm-applet &
 blueman-applet &
+setxkbmap de bone || setxkbmap de
 exec xmonad
