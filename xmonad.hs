@@ -41,5 +41,6 @@ main = do
     , ("M-S-<F1>", kbd "de")
     , ("M-<F2>", kbd "de ru")
     , ("M-<F3>", kbd "gr")
+    , ("M-<F4>", kbd "us")
     , ("M-b", sendMessage ToggleStruts)
     ])
