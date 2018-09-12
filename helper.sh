@@ -1,6 +1,7 @@
 #!/bin/sh
 
 lock() {
+	#i3lock -i ~/.xmonad/lockscreen.png -c 550055
 	pidof xscreensaver || xscreensaver -no-splash &
 	xscreensaver-command -lock
 }
@@ -16,6 +17,7 @@ sleep_suspend() {
 case "$1" in
 	"lock")
 		lock
+		#xset dpms force off
 		;;
 	"lock-hybrid-sleep")
 		lock && hybrid_sleep
